@@ -47,28 +47,28 @@ public class CrossHairRayCast : MonoBehaviour
             specialIcon = true;
             if (InteractionInfo.collider.gameObject.tag == "Chest")
             {
-                specialCrosshairTexture = Resources.Load("Textures/Crate") as Texture;
+                specialCrosshairTexture = Resources.Load("Textures/Crosshairs/Crate") as Texture;
                 //Debug.Log("Texture crate thing");
             }
             else if (InteractionInfo.collider.gameObject.tag == "Door")
             {
-                specialCrosshairTexture = Resources.Load("Textures/Door") as Texture;
+                specialCrosshairTexture = Resources.Load("Textures/Crosshairs/Door") as Texture;
                 //Debug.Log("Texture door thing");
             }
             else if (InteractionInfo.collider.gameObject.tag == "Item")
             {
-                specialCrosshairTexture = Resources.Load("Textures/Hand") as Texture;
+                specialCrosshairTexture = Resources.Load("Textures/Crosshairs/Hand") as Texture;
                 //Debug.Log("Texture Item thing");
             }
             else if (InteractionInfo.collider.gameObject.tag == "NPC")
             {
-                specialCrosshairTexture = Resources.Load("Textures/Speech") as Texture;
+                specialCrosshairTexture = Resources.Load("Textures/Crosshairs/Speech") as Texture;
                 //Debug.Log("Texture Npc thing");
             }
             else
             {
                 // This is neccesary to reset the crosshair whn looking at an object that isn't interactable
-                specialCrosshairTexture = Resources.Load("Textures/Crosshair") as Texture;
+                specialCrosshairTexture = Resources.Load("Textures/Crosshairs/Crosshair") as Texture;
                 lookingAtObject = false;
                 //Debug.Log("Texture none thing")
             }
@@ -85,7 +85,7 @@ public class CrossHairRayCast : MonoBehaviour
         else
         {
             specialIcon = false;
-            crosshairTexture = Resources.Load("Textures/Crosshair") as Texture;
+            crosshairTexture = Resources.Load("Textures/Crosshairs/Crosshair") as Texture;
         }
 
         #endregion
