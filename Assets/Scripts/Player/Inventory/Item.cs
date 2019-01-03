@@ -8,6 +8,6 @@ public class Item : ScriptableObject {
 
     public bool Equipable = false;
     public bool Consumable = false;
-
+    public bool Essential = false;
 
 }

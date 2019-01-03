@@ -19,19 +19,43 @@ public class Inventory : MonoBehaviour {
     }
     #endregion
 
+    public delegate void OnItemChanged();
+    public OnItemChanged OnItemChangedCallback;
+    
+    //Amount of available slots for items in the inventory
+    public int inventorySpace = 20;
+
+
     //invent my own list
     public List<Item> Playerinventory = new List<Item>();
 
     #region AddOrRemove
-    public void AddItem(Item NewItem)
+    public bool AddItem(Item NewItem)
     {
+        if (Playerinventory.Count >= inventorySpace)
+        {
+            Debug.Log("Full");
+            return false;
+        }
         Debug.Log("Adding Item");
         Playerinventory.Add(NewItem);
+
+        if (OnItemChangedCallback != null)
+        {
+            OnItemChangedCallback.Invoke();
+        }
+
+        return true;
     }
 
     public void RemoveItem(Item Item)
     {
         Playerinventory.Remove(Item);
+
+        if (OnItemChangedCallback != null)
+        {
+            OnItemChangedCallback.Invoke
+        }
     }
     #endregion
 }

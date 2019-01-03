@@ -23,9 +23,15 @@ public class PickupItem : Interactable
 
 
         Debug.Log(Inventory.instance.ToString());
-        //Inventory.instance.AddItem(NewItem);
-        //Destroy Item
-        Destroy(gameObject);
+
+        bool pickupSuccess = Inventory.instance.AddItem(NewItem);
+        
+        if (pickupSuccess == true)
+        {
+            //Destroy Item
+            Destroy(gameObject);
+        }
+
     }
 
 
