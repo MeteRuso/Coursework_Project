@@ -8,12 +8,21 @@ public class InventoryUI : MonoBehaviour {
     //and we dont have to reference the inventory singleton every time
     Inventory Inventory;
 
+    //Finding the Parent of all of the inventory slots
+    public Transform invParent;
+    //Array of inventory slots
+    InventorySlot[] slots;
+
+
 
 	// Use this for initialization
 	void Start () {
         Inventory = Inventory.instance;
         // Whenever an item is changed, the UI will be updated as the UpdateUI method will be called
         Inventory.OnItemChangedCallback += UpdateUI;
+
+        //Make the array slots equal to the parent of the slot objects in game
+        slots = invParent.GetComponentsInChildren<InventorySlot>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +33,19 @@ public class InventoryUI : MonoBehaviour {
     void UpdateUI()
     {
         Debug.Log("UI update");
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < Inventory.Playerinventory.Count)
+            {
+                slots[i].Additem(Inventory.Playerinventory[i]);
+            } else
+            {
+                slots[i].Clearslot();
+            }
+        }
+
+
 
     }
 }

@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour {
 
         if (OnItemChangedCallback != null)
         {
-            OnItemChangedCallback.Invoke
+            OnItemChangedCallback.Invoke();
         }
     }
     #endregion

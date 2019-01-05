@@ -20,10 +20,7 @@ public class PickupItem : Interactable
         //Pick Up Item
         Debug.Log("Picking up " + NewItem.name);
         //Add to inventory List
-
-
-        Debug.Log(Inventory.instance.ToString());
-
+        
         bool pickupSuccess = Inventory.instance.AddItem(NewItem);
         
         if (pickupSuccess == true)

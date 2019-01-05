@@ -3356,7 +3356,7 @@ GameObject:
   - component: {fileID: 1791254410}
   - component: {fileID: 1791254411}
   m_Layer: 0
-  m_Name: Grid Layout
+  m_Name: Grid Layout (Parent)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3699,6 +3699,11 @@ Prefab:
     - target: {fileID: 4967976041096664, guid: f84542b0a4b25cb40acb153a0455a093, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114740362293478512, guid: f84542b0a4b25cb40acb153a0455a093,
+        type: 2}
+      propertyPath: inventorySpace
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84542b0a4b25cb40acb153a0455a093, type: 2}
