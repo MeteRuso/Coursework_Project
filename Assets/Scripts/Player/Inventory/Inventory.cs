@@ -37,6 +37,8 @@ public class Inventory : MonoBehaviour {
     #region AddOrRemove
     public bool AddItem(Item NewItem)
     {
+        // If statement increments the consumable items when picked up 
+        // The else statement adds the item the inventory list and updates the UI
         if (NewItem.displayname == "Health Potion")
         {
             HPot += 1;
@@ -59,6 +61,7 @@ public class Inventory : MonoBehaviour {
         }
         else
         {
+            // Limits inventory size so cant have more items than spaces
             if (Playerinventory.Count >= inventorySpace)
             {
                 Debug.Log("Full");

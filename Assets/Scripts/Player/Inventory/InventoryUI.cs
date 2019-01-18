@@ -12,7 +12,7 @@ public class InventoryUI : MonoBehaviour {
     public Transform invParent;
     //Array of inventory slots
     InventorySlot[] slots;
-
+    public GameObject InvUI;
 
 
 	// Use this for initialization
@@ -25,9 +25,15 @@ public class InventoryUI : MonoBehaviour {
         slots = invParent.GetComponentsInChildren<InventorySlot>();
 	}
 	
+
+
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		if (Input.GetButtonDown("Inventory"))
+        {
+            InvUI.SetActive (!InvUI.activeSelf);
+        }
 	}
 
     void UpdateUI()

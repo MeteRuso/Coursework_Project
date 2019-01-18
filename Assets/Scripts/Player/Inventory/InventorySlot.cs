@@ -20,6 +20,13 @@ public class InventorySlot : MonoBehaviour {
         Icon.enabled = false;
     }
     
-
+    public void UseItem()
+    {
+        if (currentItem != null)
+        {
+            currentItem.Use();
+        }
+        
+    }
 
 }
