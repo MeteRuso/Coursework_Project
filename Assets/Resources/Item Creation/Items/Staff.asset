@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4702dc202ad535643b6c0151ce9cb89a, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
-  name: Staff
+  displayname: Staff
+  tagName: Staff
   iconOfObject: {fileID: 21300000, guid: 5a5cb348d26e2e04cbedb65c4802ab08, type: 3}
   Equipable: 1
   Consumable: 0
+  Essential: 0

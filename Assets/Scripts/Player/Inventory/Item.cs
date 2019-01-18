@@ -3,7 +3,8 @@
 [CreateAssetMenu(fileName ="New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject {
 
-    new public string name = "NewItem";
+    new public string displayname = "NewItem";
+    new public string tagName = "Item";
     public Sprite iconOfObject = null;
 
     public bool Equipable = false;

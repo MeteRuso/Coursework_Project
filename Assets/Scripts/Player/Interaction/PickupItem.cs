@@ -18,7 +18,7 @@ public class PickupItem : Interactable
     void pickup(Item NewItem)
     {
         //Pick Up Item
-        Debug.Log("Picking up " + NewItem.name);
+        Debug.Log("Picking up " + NewItem.displayname);
         //Add to inventory List
         
         bool pickupSuccess = Inventory.instance.AddItem(NewItem);

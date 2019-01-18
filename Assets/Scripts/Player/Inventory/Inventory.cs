@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Inventory : MonoBehaviour {
@@ -19,12 +20,16 @@ public class Inventory : MonoBehaviour {
     }
     #endregion
 
+    // A subroutine that is called every time an item is picked up
     public delegate void OnItemChanged();
     public OnItemChanged OnItemChangedCallback;
     
     //Amount of available slots for items in the inventory
     public int inventorySpace = 20;
-
+    //Variables for items that the user can hold multiple of (Consumables)
+    public int HPot, SPot, MPot, Arrow, Gold;
+    //Variable for text for each consumable
+    public Text HPotionText, MPotionText, SPotionText, ArrowText;
 
     //invent my own list
     public List<Item> Playerinventory = new List<Item>();
@@ -32,19 +37,41 @@ public class Inventory : MonoBehaviour {
     #region AddOrRemove
     public bool AddItem(Item NewItem)
     {
-        if (Playerinventory.Count >= inventorySpace)
+        if (NewItem.displayname == "Health Potion")
         {
-            Debug.Log("Full");
-            return false;
+            HPot += 1;
+            HPotionText.text = HPot.ToString();
         }
-        Debug.Log("Adding Item");
-        Playerinventory.Add(NewItem);
-
-        if (OnItemChangedCallback != null)
+        else if (NewItem.displayname == "Stamina Potion")
         {
-            OnItemChangedCallback.Invoke();
+            SPot += 1;
+            SPotionText.text = SPot.ToString();
         }
+        else if (NewItem.displayname == "Mana Potion")
+        {
+            MPot += 1;
+            MPotionText.text = MPot.ToString();
+        }
+        else if (NewItem.displayname == "Arrow")
+        {
+            Arrow += 1;
+            ArrowText.text = Arrow.ToString();
+        }
+        else
+        {
+            if (Playerinventory.Count >= inventorySpace)
+            {
+                Debug.Log("Full");
+                return false;
+            }
+            Debug.Log("Adding Item");
+            Playerinventory.Add(NewItem);
 
+            if (OnItemChangedCallback != null)
+            {
+                OnItemChangedCallback.Invoke();
+            }
+        }
         return true;
     }
 
@@ -58,4 +85,5 @@ public class Inventory : MonoBehaviour {
         }
     }
     #endregion
+
 }

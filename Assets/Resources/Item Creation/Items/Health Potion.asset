@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4702dc202ad535643b6c0151ce9cb89a, type: 3}
   m_Name: Health Potion
   m_EditorClassIdentifier: 
-  name: Health Potion
+  displayname: Health Potion
+  tagName: Hpotion
   iconOfObject: {fileID: 21300000, guid: 1c388593975b4db43aa3742fbd79fea9, type: 3}
   Equipable: 0
   Consumable: 1
+  Essential: 0
