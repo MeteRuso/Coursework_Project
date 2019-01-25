@@ -4,8 +4,8 @@
 public class Item : ScriptableObject {
 
     //Tag name is so I have a way to identify the item with no spaces in the name
-    new public string displayname = "NewItem";
-    new public string tagName = "Item";
+    public string displayname = "NewItem";
+    public string tagName = "Item";
     public Sprite iconOfObject = null;
 
     //A way to make different item interactions unique

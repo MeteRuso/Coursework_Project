@@ -6,11 +6,12 @@ using UnityEngine;
 public class Equipment : Item {
 
     public WeaponSlots EquipSlot;
+    public Resource Resources;
     public int Damage = 1;
-    public string Resource = "None";
 
     public override void Use()
     {
+        Debug.Log("Used Equipment");
         EquipmentManager.instance.Equip(this);
         RemoveFromInventory();
     }
@@ -27,5 +28,6 @@ public class Equipment : Item {
 
 }
 
+public enum Resource {Stamina, Mana, Arrows }
 public enum WeaponSlots {RightHand, LeftHand, Both}
 

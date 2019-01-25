@@ -106,7 +106,7 @@ public class CrossHairRayCast : MonoBehaviour
 
     void CheckInteraction(GameObject checkObject)
     {
-        if (Input.GetKey("e"))
+        if (Input.GetKeyDown("e"))
         {
             Interactable newObject = checkObject.GetComponent<Interactable>();
             newObject.EInteract(checkObject);

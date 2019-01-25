@@ -19,7 +19,12 @@ public class InventorySlot : MonoBehaviour {
         Icon.sprite = null;
         Icon.enabled = false;
     }
-    
+
+    public void AddToInv(Item Item)
+    {
+        Inventory.instance.AddItem(Item);
+    }
+
     public void UseItem()
     {
         if (currentItem != null)
