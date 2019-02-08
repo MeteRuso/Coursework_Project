@@ -7,7 +7,8 @@ public class Equipment : Item {
 
     public WeaponSlots EquipSlot;
     public Resource Resources;
-    public int Damage = 1;
+    public int damageStat = 1;
+    public int armourStat = 0;
 
     public override void Use()
     {

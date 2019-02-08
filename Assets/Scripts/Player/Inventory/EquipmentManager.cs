@@ -21,8 +21,12 @@ public class EquipmentManager : MonoBehaviour {
 
     InventorySlot[] slots;
     Equipment[] currentEquipment;
-    public Transform EquipSlotParent;
     Inventory inventory;
+    public Transform EquipSlotParent;
+    public delegate void OnEquipmentChanged (Equipment newItem, int[] statChanges);
+    public OnEquipmentChanged onEquipmentChanged;
+    public int[] statChanges;
+
 
     // Use this for initialization
     void Start () {
@@ -64,6 +68,7 @@ public class EquipmentManager : MonoBehaviour {
     {
         if (currentEquipment[0] != null)
         {
+            statChanges[0] = currentEquipment[0].damageStat;
             inventory.AddItem(currentEquipment[0]);
             currentEquipment[0] = null;
             slots[0].Clearslot();
@@ -74,6 +79,7 @@ public class EquipmentManager : MonoBehaviour {
     {
         if (currentEquipment[1] != null)
         {
+            statChanges[1] = currentEquipment[1].armourStat;
             inventory.AddItem(currentEquipment[1]);
             currentEquipment[1] = null;
             slots[1].Clearslot();
@@ -84,6 +90,7 @@ public class EquipmentManager : MonoBehaviour {
     {
         if (currentEquipment[2] != null)
         {
+            statChanges[0] = currentEquipment[0].damageStat;
             inventory.AddItem(currentEquipment[2]);
             currentEquipment[2] = null;
             slots[1].Clearslot();
@@ -106,6 +113,12 @@ public class EquipmentManager : MonoBehaviour {
             slots[0].Additem(newItem);
             slots[1].Additem(newItem);
         }
+
+        if (onEquipmentChanged != null)
+        {
+            onEquipmentChanged.Invoke(newItem, statChanges);
+        }
+
     }
     
 }
