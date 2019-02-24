@@ -3984,8 +3984,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 2
-  aggroRadius: 15
-  aggro: 0
+  distance: 0
+  Visible: 0
+  Investigated: 1
   lastKnownPos: {x: 0, y: 0, z: 0}
   playerPos: {x: 0, y: 0, z: 0}
   directionToPlayer: {x: 0, y: 0, z: 0}
@@ -8287,7 +8288,7 @@ GameObject:
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1095483145
@@ -9595,7 +9596,7 @@ Transform:
   m_LocalScale: {x: 0.5512162, y: 0.98629147, z: 0.5512162}
   m_Children: []
   m_Father: {fileID: 1440120999}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1256699081
 MeshRenderer:
@@ -9756,7 +9757,7 @@ Transform:
   m_LocalScale: {x: 0.7130536, y: 0.20151716, z: 0.7130536}
   m_Children: []
   m_Father: {fileID: 1440120999}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1291136664
 MeshRenderer:
@@ -10641,10 +10642,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1444388923}
-  - {fileID: 1584288186}
   - {fileID: 1291136663}
   - {fileID: 1256699080}
   - {fileID: 1911501782}
+  - {fileID: 1584288186}
   m_Father: {fileID: 1987719865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10815,7 +10816,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444388922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5630001, z: -0.19000053}
+  m_LocalPosition: {x: -0, y: 0.5630001, z: 0.149}
   m_LocalScale: {x: 0.54702926, y: 0.24631096, z: 1.0664247}
   m_Children: []
   m_Father: {fileID: 1440120999}
@@ -11843,11 +11844,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1584288185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.099999994, z: -0.14999962}
+  m_LocalPosition: {x: 0, y: -0.099999994, z: 0.17}
   m_LocalScale: {x: 0.7902258, y: 1.564481, z: 0.83352834}
   m_Children: []
   m_Father: {fileID: 1440120999}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1584288187
 MeshRenderer:
@@ -14362,7 +14363,7 @@ Transform:
   m_LocalScale: {x: 0.24356206, y: 0.19171035, z: 0.24356206}
   m_Children: []
   m_Father: {fileID: 1440120999}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1911501783
 MeshRenderer:
@@ -14517,6 +14518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987719865}
+  - component: {fileID: 1987719866}
   m_Layer: 0
   m_Name: Abdi
   m_TagString: Untagged
@@ -14538,6 +14540,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180.05, z: 0}
+--- !u!114 &1987719866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987719864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcb643a395e9d04b919e3168bc5e54f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage:
+    baseStatValue: 10
+  Resist:
+    baseStatValue: 20
+  maxHealth:
+    baseStatValue: 100
+  currentHealth:
+    baseStatValue: 100
+  maxStamina:
+    baseStatValue: 150
+  currentStamina:
+    baseStatValue: 150
+  maxMana:
+    baseStatValue: 50
+  currentMana:
+    baseStatValue: 50
+  Ammo:
+    baseStatValue: 0
 --- !u!1 &2001390079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740888144842598, guid: a360c9899b81b194b8f2c7cb7c10ef28,

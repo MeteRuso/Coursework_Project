@@ -13,6 +13,19 @@ public class Stat{
         return baseStatValue;
     }
 
+    public void AddValue(int Input)
+    {
+        baseStatValue += Input;
+    }
 
+    public void SetValue(int Input)
+    {
+        baseStatValue = Input;
+    }
+
+    public void AmpValue(int Input)
+    {
+        baseStatValue *= Input;
+    }
 
 }

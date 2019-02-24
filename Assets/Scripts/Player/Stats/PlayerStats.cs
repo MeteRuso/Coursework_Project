@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : CharacterStats {
+public class PlayerStats : EnemyStats {
 
 	// Use this for initialization
 	void Start () {
